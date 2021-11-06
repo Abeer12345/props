@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
 
+import Profil from './profile/profile';
+import photo from '../src/profilimg.png'
+import PropTypes from "prop-types";
 function App() {
+  let fullName = "Abir"
+  let bio = "Junior Web developer"
+  let profession = "Web developer"
+  let imgprofil = photo
+  const handleName = fullName => alert(fullName)
+  //   App.defaultProps = {
+  //     version: "16"
+  // };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{ backgroundColor: '#80808033', textAlign: 'center', marginTop: '10%' }}>
+        <Profil name={fullName} ></Profil>
+        <Profil bio={bio}></Profil>
+        <Profil profession={profession}></Profil>
+        <Profil name={fullName} handleName={handleName} > <img src={imgprofil} alt="img" style={{ width: 100, height: 100 }} />  </Profil>
+      </div>
+
+
+
     </div>
   );
 }
